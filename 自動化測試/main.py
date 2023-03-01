@@ -1,51 +1,10 @@
-import json
-from selenium import webdriver
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException    
 import time
-import datetime
-import os
-import random
-import subprocess
-from selenium.common.exceptions import TimeoutException
-
-import time
-# from stem import Signal
-# from stem.control import Controller
-import random
-import io
-from datetime import datetime
-import csv
-from selenium.webdriver.common.keys import Keys
-import re
-from selenium import webdriver    
-from selenium.webdriver.chrome.options import Options
-import datetime
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
-
-def scrollDownAllTheWay(driver):
-    last_height = driver.execute_script("return document.body.scrollHeight")
-
-    while True:
-        driver.execute_script("window.scrollTo(0, 100*document.body.scrollHeight);")
-
-        time.sleep(3)
-
-        if "Load next page</button>" in driver.page_source:
-            driver.find_element_by_css_selector('.myButton').click()
-
-        new_height = driver.execute_script("return document.body.scrollHeight")
-
-        if new_height == last_height:
-            break
-        last_height = new_height
-        
-#program processing timer
-start_duration = datetime.datetime.now()
 
 #set url
 site_locate = 'https://www.cathaybk.com.tw/cathaybk/'
